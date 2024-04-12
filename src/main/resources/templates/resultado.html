@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+</head>
+<body>
+<h1>Resultado</h1>
+<p>El número ingresado es: <strong th:text="${numero}"></strong></p>
+<p>¿Es capicua? <strong th:if="${esCapicua}" th:text="'Sí'"></strong><strong th:unless="${esCapicua}" th:text="'No'"></strong></p>
+<a href="/">Volver al formulario</a>
+</body>
+</html>
