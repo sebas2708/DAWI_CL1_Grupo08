@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>PagoTelefonico</title>
+    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="card">
+    <div class="card-header">
+        Calculo de Saldo de Servicio
+    </div>
+    <div class="card-body">
+        <form th:action="@{/pago}" method="post" th:object="${pagoTelefonicoModel}">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtminutos"
+                       placeholder="Ingrese la cantidad de minutos" >
+                <label for="txtminutos">Ingrese los Minutos</label>
+            </div>
+            <hr />
+            <button type="submit" class="btn btn-primary">Calcular</button>
+            <div th:if="${mostrarMensaje}" class="alert alert-danger" role="alert">
+            <span th:text="${resultado} ?: ''"></span>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
