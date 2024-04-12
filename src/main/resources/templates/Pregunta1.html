@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="layout::menu"></nav>
+
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center" style="height: 50vh;">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-bg-info mb-3">
+                    Cálculo total de costo de llamada por minuto
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/Pregunta1}" method="post" th:object="${llamadaModelo}">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="txtminuto"
+                                   placeholder="minuto" th:field="*{minuto}">
+                            <label for="txtminuto">Ingrese minutos de llamada</label>
+                        </div>
+                        <hr />
+                        <button type="submit" class="btn btn-primary">Calcular costo de llamada</button>
+                        <div th:if="${mostrarMensaje}" class="alert alert-danger" role="alert">
+                            <span th:text="${resultado} ?: ''"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
