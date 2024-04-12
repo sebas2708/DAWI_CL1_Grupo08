@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="layout::menu"></nav>
+<div class="card">
+    <div class="card-header text-bg-info mb-3">
+        Calculo de edades
+    </div>
+    <div class="card-body">
+        <form th:action="@{/frm2}" method="post" th:object="${edadModel}">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtEdad1"
+                       placeholder="Edad1" th:field="*{edad1}">
+                <label for="txtEdad1">Ingrese la primera edad</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="txtEdad2"
+                       placeholder="Edad2" th:field="*{edad2}">
+                <label for="txtEdad2">Ingrese la segunda edad</label>
+            </div>
+            <hr />
+            <button type="submit" class="btn btn-primary">Calcular edades</button>
+            <div th:if="${mostrarMensaje}" class="alert alert-danger" role="alert">
+                <span th:text="${resultado} ?: ''"></span>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
