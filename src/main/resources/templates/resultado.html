@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Resultado</title>
+    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/js/bootstrap/bootstrap.bundle.js}" rel="stylesheet" />
 </head>
 <body>
-<h1>Resultado</h1>
-<p>El número ingresado es: <strong th:text="${numero}"></strong></p>
-<p>¿Es capicua? <strong th:if="${esCapicua}" th:text="'Sí'"></strong><strong th:unless="${esCapicua}" th:text="'No'"></strong></p>
-<a href="/">Volver al formulario</a>
+<div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+<div class="container">
+    <h1>Resultado</h1>
+    <p>El número ingresado es: <strong th:text="${numero}"></strong></p>
+    <p>¿Es capicua? <strong th:if="${esCapicua}" th:text="'Sí'"></strong><strong th:unless="${esCapicua}" th:text="'No'"></strong></p>
+    <a href="/formulario" class="btn btn-primary">Volver al formulario</a>
+</div>
+</div>
 </body>
 </html>
+

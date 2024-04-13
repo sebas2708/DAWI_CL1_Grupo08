@@ -27,7 +27,9 @@ public class PagoTelefonicoController {
         if (minutos <= 5){
             calculo = "usted debe pagar:"+"$10";
         }else{
-            calculo = "usted debe pagar:"+minutos*2;
+            //calculo = "usted debe pagar:"+minutos*2;
+            double costo = minutos * 2.0;
+            calculo = String.format("Usted debe pagar: $%.2f", costo);
         }
         model.addAttribute("mostrarMensaje", true);
         model.addAttribute("resultado","Mensaje:"+ calculo);
