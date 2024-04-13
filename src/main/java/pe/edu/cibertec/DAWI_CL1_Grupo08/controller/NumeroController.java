@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class NumeroController {
 
-    @GetMapping("/")
+    @GetMapping("/formulario")
     public String mostrarFormulario() {
         return "formulario";
     }
